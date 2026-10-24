@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seven Core Research Pillars &amp; Structural Map | M. Imansyah Basudewa, S.T., M.T.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="research-pillars">
+
+  <header class="site-header" id="sharedSiteHeader"></header>
+
+  <main class="page-wrapper">
+
+    <!-- ======================================================================
+         DEDICATED PAGE: SEVEN CORE RESEARCH PILLARS & STRUCTURAL MAP
+         ====================================================================== -->
+    <section class="booknote-sheet" id="research" aria-labelledby="pillarsHeading">
+      <div class="sheet-header-bar">
+        <span>01.B SEVEN CORE RESEARCH PILLARS &amp; STRUCTURAL TAXONOMY PAGE</span>
+        <span>CLICK ANY TREE BRANCH OR VENN NODE TO OPEN THAT PILLAR VIEW</span>
+      </div>
+
+      <div class="sheet-title-banner">
+        <div>
+          <h1 class="sheet-title" id="pillarsHeading">Seven Core Research Pillars &amp; Structural Map</h1>
+          <p class="sheet-subtitle">
+            Select a branch in the <strong>(a) Interactive Tree Diagram</strong>, a region in the <strong>(b) Interactive Venn Diagram</strong>, or use the Pillar Page Switcher below to open each of the 7 research domains on its own focused view without scrolling.
+          </p>
+        </div>
+        <div class="control-btn-group">
+          <button class="ctrl-pill-btn active" type="button" id="showTreeDiagramBtn">(a) Interactive Tree Diagram</button>
+          <button class="ctrl-pill-btn burgundy" type="button" id="showVennDiagramBtn">(b) Interactive Venn Diagram</button>
+          <a href="index.html" class="ctrl-pill-btn">← Back to Main Photo &amp; Profile</a>
+        </div>
+      </div>
+
+      <!-- Interactive Tree & Venn SVG Container -->
+      <div class="taxonomy-visualizer-box">
+        <div class="taxonomy-toolbar">
+          <span id="taxonomyModeCaption" style="font-family: var(--font-batang); font-weight: 700; color: var(--accent-navy);">
+            VIEWING (a): HIERARCHICAL RESEARCH TREE | CLICK ANY BRANCH NODE (1 TO 7) TO OPEN THAT PILLAR
+          </span>
+          <span class="academic-tag burgundy" id="selectedPillarReadout">Active Pillar View: Pillar 01</span>
+        </div>
+
+        <div class="taxonomy-stage">
+          <!-- (a) Interactive Hierarchical Tree Diagram SVG -->
+          <div class="taxonomy-svg-wrapper" id="treeDiagramWrapper"></div>
+
+          <!-- (b) Interactive Venn Diagram SVG -->
+          <div class="taxonomy-svg-wrapper" id="vennDiagramWrapper" style="display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Pillar Page Switcher Bar (Separate View per Pillar, No Scrolling Required) -->
+      <div class="curriculum-nav-tabs" id="pillarTabsBar" role="tablist"></div>
+
+      <!-- Focused Pillar View Container -->
+      <div class="pillars-grid" id="pillarsBentoGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><strong>M. IMANSYAH BASUDEWA, S.T., M.T.</strong> | Computer Engineering Graduate Researcher, Memorial University</div>
+      <div>BOOKNOTE WHITE EDITION | BATANG &amp; IEEE TYPOGRAPHY</div>
+    </div>
+  </footer>
+
+  <aside class="schrodinger-widget" id="schrodingerWidgetContainer"></aside>
+
+  <script src="data.js"></script>
+  <script src="learn-subtopics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

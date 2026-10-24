@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Illustrations &amp; Simulations | M. Imansyah Basudewa, S.T., M.T.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Gowun+Batang:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="illustrations">
+
+  <header class="site-header" id="sharedSiteHeader"></header>
+
+  <main class="page-wrapper">
+
+    <!-- Topic Page Selector Bar (Also accessible from 04. ILLUSTRATION Header Dropdown) -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+      <div class="control-btn-group" id="illustrationPageTabs">
+        <button type="button" class="ctrl-pill-btn active" data-illus-topic="crypto">
+          Topic (1): Cryptography (BB84 QKD)
+        </button>
+        <button type="button" class="ctrl-pill-btn" data-illus-topic="hamming">
+          Topic (2): 3D Hamming Cube (000 &amp; 111)
+        </button>
+        <button type="button" class="ctrl-pill-btn" data-illus-topic="topology">
+          Topic (3): 7 Steane, IBM &amp; SU(2) Topology
+        </button>
+        <button type="button" class="ctrl-pill-btn" data-illus-topic="circuit">
+          Topic (4): 3 Qubit Quantum Circuit
+        </button>
+        <button type="button" class="ctrl-pill-btn burgundy" data-illus-topic="routing">
+          Topic (5): Classical &amp; BSM Quantum Routing
+        </button>
+      </div>
+      <span class="academic-tag burgundy">LATEX TIKZ / QUANTIKZ VECTOR &amp; ANIMATED GIF FIGURES</span>
+    </div>
+
+    <!-- ======================================================================
+         DEDICATED PAGE VIEW 1: CRYPTOGRAPHY ILLUSTRATION (BB84 QKD)
+         ====================================================================== -->
+    <section class="booknote-sheet illus-topic-sheet" id="topic-sheet-crypto">
+      <div class="sheet-header-bar">
+        <span>04.1 INTERACTIVE CRYPTOGRAPHY NOTEBOOK PAGE</span>
+        <span>WHITE GRID NOTEBOOK + HANDWRITING SKETCH &amp; BLOCK INSPECTOR</span>
+      </div>
+
+      <div class="wide-laboratory-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="academic-tag">LABORATORY TOPIC 01 OF 05 | QUANTUM &amp; CLASSICAL CRYPTOGRAPHY</span>
+          <span class="academic-tag burgundy">$R \ge 1 - 2h_2(e_{\text{bit}})$</span>
+        </div>
+        <h1 class="sheet-title">(1) BB84 Quantum Key Distribution &amp; Eavesdropper Disturbance Simulator</h1>
+        <p class="sheet-subtitle">
+          White-grid notebook handwriting simulation of single-photon polarization key distribution across an optical link. Click any station block on the notebook or use the buttons below to inspect each component.
+        </p>
+
+        <!-- ONE WIDE ANIMATION STAGE (WHITE GRID NOTEBOOK) -->
+        <div class="wide-canvas-stage notebook-grid-stage">
+          <span class="mode-badge-overlay" id="cryptoModeBadge">MODE: STATIC (NOTEBOOK SKETCH)</span>
+          <canvas id="cryptoCanvas" aria-label="BB84 Quantum Cryptography Wide Interactive Animation"></canvas>
+        </div>
+
+        <!-- CONTROLS & LIVE TELEMETRY -->
+        <div class="applet-controls-panel">
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">MOTION &amp; HANDWRITING:</strong>
+            <button class="ctrl-pill-btn active" type="button" id="cryptoStaticBtn">Static Mode (Paused)</button>
+            <button class="ctrl-pill-btn emerald" type="button" id="cryptoDynamicBtn">Dynamic Mode (Animate Photons)</button>
+            <button class="ctrl-pill-btn" type="button" id="cryptoStepBtn">Step Photon +15%</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-replay-sketch="crypto">Replay Handwriting Sketch ✎</button>
+          </div>
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">PROTOCOL &amp; MEASUREMENT CONTROL:</strong>
+            <button class="ctrl-pill-btn" type="button" id="cryptoToggleEveBtn">Eve Eavesdropper: OFF (Secure)</button>
+            <button class="ctrl-pill-btn" type="button" id="cryptoRandomizeBasesBtn">Generate New 6 Qubit Key Block</button>
+          </div>
+        </div>
+
+        <div class="applet-telemetry" id="cryptoTelemetryBox"></div>
+
+        <!-- BLOCK-BY-BLOCK DESCRIPTION OF ANIMATION COMPONENTS -->
+        <div id="blockDescriptions-crypto"></div>
+
+        <!-- EXPLANATION BELOW WIDE ANIMATION -->
+        <div class="wide-explanation-grid">
+          <div class="explainer-box">
+            <h3>1. Static vs. Dynamic Difference</h3>
+            <p style="margin-bottom: 0;">
+              <strong>Static Equilibrium:</strong> Freezes all 6 polarized photons along the fiber so you can inspect Alice's preparation basis ($\{+, \times\}$), Bob's detector basis, and the sifted parity ledger slot by slot.<br />
+              <strong>Dynamic Evolution:</strong> Propagates the electromagnetic wavepacket $|\psi(x,t)\rangle = e^{i(kx - \omega t)}|\text{pol}\rangle$. When Eve is ON, non unitary projective collapse occurs at $x = L/2$.
+            </p>
+          </div>
+
+          <div class="explainer-box burgundy">
+            <h3>2. State Vectors &amp; Unitary Matrices</h3>
+            <div class="equation-box" style="margin: 0.4rem 0;">
+              $$|0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \; |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \; |+\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \; H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$$
+            </div>
+            <p style="margin-bottom: 0;">
+              Born overlap between conjugate bases: $|\langle + | 0 \rangle|^2 = |\langle - | 0 \rangle|^2 = \frac{1}{2}$, which induces an exact $25\%$ QBER under intercept resend eavesdropping.
+            </p>
+          </div>
+
+          <div class="explainer-box emerald">
+            <h3>3. Unique Topological &amp; Physical Facts</h3>
+            <p style="margin-bottom: 0;">
+              • <strong>Mutually Unbiased Bases (MUBs):</strong> The $Z$ ($+$) and $X$ ($\times$) bases satisfy $[Z, X] = 2iY \neq 0$, making simultaneous sharp measurement impossible.<br />
+              • <strong>Monogamy of Entanglement:</strong> Maximally entangled states $|\Phi^+\rangle_{AB}$ have zero correlation with any third party environment $\rho_E$.
+            </p>
+          </div>
+        </div>
+
+        <!-- DYNAMICALLY RENDERED WORKED MEASUREMENT EXAMPLE & 12-STEP TUTORIAL -->
+        <div id="tutorialContainer-crypto"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEDICATED PAGE VIEW 2: 3D BOX HAMMING DISTANCE CUBE (000 AND 111)
+         ====================================================================== -->
+    <section class="booknote-sheet illus-topic-sheet" id="topic-sheet-hamming" style="display: none;">
+      <div class="sheet-header-bar">
+        <span>04.2 INTERACTIVE CLASSICAL ERROR CORRECTION NOTEBOOK PAGE</span>
+        <span>WHITE GRID NOTEBOOK 3D HAMMING CUBE + BLOCK INSPECTOR</span>
+      </div>
+
+      <div class="wide-laboratory-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="academic-tag">LABORATORY TOPIC 02 OF 05 | CLASSICAL ERROR CORRECTION</span>
+          <span class="academic-tag">$d_{\min}(000, 111) = 3, \; t = 1$</span>
+        </div>
+        <h1 class="sheet-title">(2) 3D Box Hamming Distance Cube ($000$ and $111$ Repetition Codewords)</h1>
+        <p class="sheet-subtitle">
+          White-grid notebook 3D Boolean hypercube $\{0,1\}^3$ laboratory illustrating the $[3,1,3]$ repetition code, disjoint Hamming spheres of radius $t=1$, syndrome calculation $\mathbf{s} = \mathbf{r}H^T$, and nearest neighbor decoding.
+        </p>
+
+        <!-- ONE WIDE ANIMATION STAGE -->
+        <div class="wide-canvas-stage notebook-grid-stage">
+          <span class="mode-badge-overlay" id="cubeModeBadge">MODE: STATIC (NOTEBOOK SKETCH)</span>
+          <canvas id="hammingCubeCanvas" aria-label="3D Hamming Distance Cube Wide Visualization"></canvas>
+        </div>
+
+        <!-- CONTROLS & LIVE TELEMETRY -->
+        <div class="applet-controls-panel">
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">MOTION &amp; HANDWRITING:</strong>
+            <button class="ctrl-pill-btn active" type="button" id="cubeStaticBtn">Static Mode (Fixed Cube)</button>
+            <button class="ctrl-pill-btn emerald" type="button" id="cubeDynamicBtn">Dynamic Mode (Rotate 3D Cube)</button>
+            <button class="ctrl-pill-btn" type="button" id="cubeStepAngleBtn">Rotate +15° Step</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-replay-sketch="hamming">Replay Handwriting Sketch ✎</button>
+          </div>
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">CODEWORD &amp; BIT FLIP INJECTION:</strong>
+            <button class="ctrl-pill-btn active" type="button" data-cube-word="000">Codeword 000</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-cube-word="111">Codeword 111</button>
+            <button class="ctrl-pill-btn" type="button" data-cube-flip="0">Flip Bit 1 ($e_1$)</button>
+            <button class="ctrl-pill-btn" type="button" data-cube-flip="1">Flip Bit 2 ($e_2$)</button>
+            <button class="ctrl-pill-btn" type="button" data-cube-flip="2">Flip Bit 3 ($e_3$)</button>
+          </div>
+        </div>
+
+        <div class="applet-telemetry" id="hammingCubeTelemetry"></div>
+
+        <!-- BLOCK-BY-BLOCK DESCRIPTION OF ANIMATION COMPONENTS -->
+        <div id="blockDescriptions-hamming"></div>
+
+        <!-- EXPLANATION BELOW WIDE ANIMATION -->
+        <div class="wide-explanation-grid">
+          <div class="explainer-box">
+            <h3>1. Static vs. Dynamic Difference</h3>
+            <p style="margin-bottom: 0;">
+              <strong>Static State:</strong> Locks the $Q_3$ Boolean hypercube so you can click individual vertices ($000$ to $111$) and count edge hops for Hamming distance $d_H(\mathbf{x}, \mathbf{y})$.<br />
+              <strong>Dynamic State:</strong> Continuously rotates the 3D Euclidean embedding $SO(3)$ to visualize the two non overlapping radius 1 decoding spheres around $000$ (Navy) and $111$ (Burgundy).
+            </p>
+          </div>
+
+          <div class="explainer-box burgundy">
+            <h3>2. Generator &amp; Parity Matrices ($G, H$)</h3>
+            <div class="equation-box" style="margin: 0.4rem 0;">
+              $$G = \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}, \quad H = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \end{pmatrix}, \quad G H^T = \mathbf{0} \pmod 2$$
+            </div>
+            <p style="margin-bottom: 0;">
+              Syndrome $\mathbf{s} = \mathbf{r}H^T = (r_1 \oplus r_2, \; r_2 \oplus r_3)$ identifies which coordinate axis edge of the 3D cube was flipped by channel noise.
+            </p>
+          </div>
+
+          <div class="explainer-box emerald">
+            <h3>3. Unique Topological Facts About $Q_3$</h3>
+            <p style="margin-bottom: 0;">
+              • <strong>Perfect Sphere Packing:</strong> Each radius 1 ball contains $\binom{3}{0} + \binom{3}{1} = 1 + 3 = 4$ vertices. Two balls cover $2 \times 4 = 8 = 2^3$ vertices with zero wasted space!<br />
+              • <strong>3 Regular Bipartite Graph:</strong> Every vertex has degree 3, and opposite corners require 3 orthogonal bit flips.
+            </p>
+          </div>
+        </div>
+
+        <div id="tutorialContainer-hamming"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEDICATED PAGE VIEW 3: TOPOLOGY (7-STEANE, IBM HEAVY HEX & SU(2))
+         ====================================================================== -->
+    <section class="booknote-sheet illus-topic-sheet" id="topic-sheet-topology" style="display: none;">
+      <div class="sheet-header-bar">
+        <span>04.3 INTERACTIVE CODE &amp; HARDWARE TOPOLOGY NOTEBOOK PAGE</span>
+        <span>WHITE GRID NOTEBOOK TOPOLOGY + BLOCK INSPECTOR</span>
+      </div>
+
+      <div class="wide-laboratory-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="academic-tag">LABORATORY TOPIC 03 OF 05 | ALGEBRAIC &amp; HARDWARE TOPOLOGY</span>
+          <span class="academic-tag burgundy">$[[7,1,3]] \text{ Steane} \cdot \text{IBM Heavy Hex} \cdot SU(2)$</span>
+        </div>
+        <h1 class="sheet-title">(3) Topology Explorer: $[7,4,3]$ Hamming / $[[7,1,3]]$ Steane, IBM Heavy Hex &amp; $SU(2)$ Group</h1>
+        <p class="sheet-subtitle">
+          White-grid notebook topological stage comparing the projective Fano plane $\text{PG}(2,2)$ of the 7 Qubit Steane code, IBM Quantum's Heavy Hex superconducting coupling lattice, the $SU(2)$ Unitary Lie group manifold, and 2D Planar Surface Codes.
+        </p>
+
+        <!-- ONE WIDE ANIMATION STAGE -->
+        <div class="wide-canvas-stage notebook-grid-stage">
+          <span class="mode-badge-overlay" id="topoModeBadge">MODE: STATIC (NOTEBOOK SKETCH)</span>
+          <canvas id="topologyCanvas" aria-label="Steane Code, IBM Heavy Hex, and Unitary Group Wide Topology Canvas"></canvas>
+        </div>
+
+        <!-- CONTROLS & LIVE TELEMETRY -->
+        <div class="applet-controls-panel">
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">MOTION &amp; HANDWRITING:</strong>
+            <button class="ctrl-pill-btn active" type="button" id="topoStaticBtn">Static Mode (Paused)</button>
+            <button class="ctrl-pill-btn emerald" type="button" id="topoDynamicBtn">Dynamic Mode (Animate Wave/Flow)</button>
+            <button class="ctrl-pill-btn" type="button" id="topoStepBtn">Step Phase +1</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-replay-sketch="topology">Replay Handwriting Sketch ✎</button>
+          </div>
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">SELECT TOPOLOGY MANIFOLD:</strong>
+            <button class="ctrl-pill-btn active" type="button" data-topo-mode="steane">7 Steane / Hamming Fano Plane</button>
+            <button class="ctrl-pill-btn" type="button" data-topo-mode="ibm">IBM Heavy Hex Lattice</button>
+            <button class="ctrl-pill-btn" type="button" data-topo-mode="unitary">SU(2) Unitary Group Topology</button>
+            <button class="ctrl-pill-btn" type="button" data-topo-mode="surface">2D Planar Surface Code</button>
+          </div>
+        </div>
+
+        <div class="applet-telemetry" id="topologyTelemetry"></div>
+
+        <!-- BLOCK-BY-BLOCK DESCRIPTION OF ANIMATION COMPONENTS -->
+        <div id="blockDescriptions-topology"></div>
+
+        <!-- EXPLANATION BELOW WIDE ANIMATION -->
+        <div class="wide-explanation-grid">
+          <div class="explainer-box">
+            <h3>1. Static vs. Dynamic Difference</h3>
+            <p style="margin-bottom: 0;">
+              <strong>Static State:</strong> Displays the exact projective or planar adjacency graph so you can click any qubit vertex and compute its stabilizer parity syndrome $\mathbf{s} = (s_1, s_2, s_3)$.<br />
+              <strong>Dynamic State:</strong> Animates syndrome excitation waves around triggered qubits and traces continuous 1 parameter Lie group orbits $U(t) = \exp(-it \hat{n}\cdot\vec{\sigma}/2)$ on $SU(2)$.
+            </p>
+          </div>
+
+          <div class="explainer-box burgundy">
+            <h3>2. Self Orthogonal Steane Matrix &amp; $SU(2)$</h3>
+            <div class="equation-box" style="margin: 0.4rem 0;">
+              $$H_{[7,4,3]} = \begin{pmatrix} 0 & 0 & 0 & 1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 1 & 0 & 1 & 0 & 1 & 0 & 1 \end{pmatrix}, \; H H^T = \mathbf{0} \pmod 2$$
+            </div>
+            <p style="margin-bottom: 0;">
+              Column $j$ of $H_{[7,4,3]}$ is the binary representation of $j \in \{1,\dots,7\}$, allowing single fault localization in one lookup!
+            </p>
+          </div>
+
+          <div class="explainer-box emerald">
+            <h3>3. Unique Facts About These Topologies</h3>
+            <p style="margin-bottom: 0;">
+              • <strong>Fano Plane $\text{PG}(2,2)$:</strong> 7 points and 7 lines (including the inscribed circle); every pair of lines intersects at exactly 1 point.<br />
+              • <strong>IBM Heavy Hex:</strong> Degree 2 bridge qubits isolate degree 3 data qubits to prevent transmon frequency collisions.<br />
+              • <strong>$SU(2) \cong S^3$:</strong> Double cover of $SO(3)$ where a $2\pi$ rotation yields $-I$.
+            </p>
+          </div>
+        </div>
+
+        <div id="tutorialContainer-topology"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEDICATED PAGE VIEW 4: INTERACTIVE QUANTUM CIRCUIT SIMULATOR
+         ====================================================================== -->
+    <section class="booknote-sheet illus-topic-sheet" id="topic-sheet-circuit" style="display: none;">
+      <div class="sheet-header-bar">
+        <span>04.4 INTERACTIVE QUANTUM CIRCUIT &amp; MATRIX NOTEBOOK PAGE</span>
+        <span>WHITE GRID NOTEBOOK 3 QUBIT CIRCUIT + BLOCK INSPECTOR</span>
+      </div>
+
+      <div class="wide-laboratory-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="academic-tag">LABORATORY TOPIC 04 OF 05 | QUANTUM CIRCUIT &amp; MATRICES</span>
+          <span class="academic-tag">$|\psi_{\text{out}}\rangle = U_4 U_3 U_2 U_1 |000\rangle$</span>
+        </div>
+        <h1 class="sheet-title">(4) Interactive 3 Qubit Quantum Circuit &amp; Unitary Matrix Simulator</h1>
+        <p class="sheet-subtitle">
+          White-grid notebook 3-qubit quantum circuit composer ($q_0, q_1, q_2$). Click any gate slot to cycle operators ($I, H, X, Z, S$), step the unitary wavefront column by column, and inspect each circuit block.
+        </p>
+
+        <!-- ONE WIDE ANIMATION STAGE -->
+        <div class="wide-canvas-stage notebook-grid-stage">
+          <span class="mode-badge-overlay" id="circuitModeBadge">MODE: STATIC (LAYER COL 1)</span>
+          <canvas id="quantumCircuitCanvas" aria-label="Interactive 3 Qubit Quantum Circuit Wide Simulator"></canvas>
+        </div>
+
+        <!-- CONTROLS & LIVE TELEMETRY -->
+        <div class="applet-controls-panel">
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">MOTION &amp; HANDWRITING:</strong>
+            <button class="ctrl-pill-btn active" type="button" id="circuitStaticBtn">Static Mode (Manual Step)</button>
+            <button class="ctrl-pill-btn emerald" type="button" id="circuitDynamicBtn">Dynamic Mode (Sweep Wavefront)</button>
+            <button class="ctrl-pill-btn" type="button" id="circuitStepLayerBtn">Step Gate Layer +1</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-replay-sketch="circuit">Replay Handwriting Sketch ✎</button>
+          </div>
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">CIRCUIT PRESETS:</strong>
+            <button class="ctrl-pill-btn active" type="button" data-circuit-preset="ghz">3 Qubit GHZ Circuit</button>
+            <button class="ctrl-pill-btn" type="button" data-circuit-preset="bell">Bell Pair $|\Phi^+\rangle$</button>
+            <button class="ctrl-pill-btn" type="button" data-circuit-preset="bitflip">3 Qubit ECC Encoding</button>
+            <button class="ctrl-pill-btn" type="button" data-circuit-preset="superposition">Uniform $H^{\otimes 3}$</button>
+          </div>
+        </div>
+
+        <div class="applet-telemetry" id="circuitTelemetry"></div>
+
+        <!-- BLOCK-BY-BLOCK DESCRIPTION OF ANIMATION COMPONENTS -->
+        <div id="blockDescriptions-circuit"></div>
+
+        <!-- EXPLANATION BELOW WIDE ANIMATION -->
+        <div class="wide-explanation-grid">
+          <div class="explainer-box">
+            <h3>1. Static vs. Dynamic Difference</h3>
+            <p style="margin-bottom: 0;">
+              <strong>Static State:</strong> Locks the unitary wavefront bar at a single gate column $t \in \{1, 2, 3, 4\}$ so you can inspect the Kronecker product $U_t = A_{q_0} \otimes B_{q_1} \otimes C_{q_2}$ and click gates to edit them.<br />
+              <strong>Dynamic State:</strong> Continuously sweeps the Schrödinger time evolution wavefront across all circuit columns.
+            </p>
+          </div>
+
+          <div class="explainer-box burgundy">
+            <h3>2. Unitary Gate Matrices &amp; Tensor Products</h3>
+            <div class="equation-box" style="margin: 0.4rem 0;">
+              $$X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad \text{CNOT} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$$
+            </div>
+            <p style="margin-bottom: 0;">
+              Every 3 qubit circuit layer is an $8 \times 8$ unitary matrix $U \in U(8)$ preserving total probability $\|\psi\|_2^2 = 1$.
+            </p>
+          </div>
+
+          <div class="explainer-box emerald">
+            <h3>3. Unique Facts About Circuit Universality</h3>
+            <p style="margin-bottom: 0;">
+              • <strong>Gottesman Knill Theorem:</strong> Circuits built solely from Clifford gates $\{H, S, \text{CNOT}\}$ can be simulated in polynomial time on a classical computer.<br />
+              • <strong>Clifford + T Universality:</strong> Adding the non Clifford $T = \text{diag}(1, e^{i\pi/4})$ gate unlocks full BQP quantum universality.
+            </p>
+          </div>
+        </div>
+
+        <div id="tutorialContainer-circuit"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEDICATED PAGE VIEW 5: CLASSICAL ROUTING VS. BELL STATE MEASUREMENTS (BSM)
+         ====================================================================== -->
+    <section class="booknote-sheet illus-topic-sheet" id="topic-sheet-routing" style="display: none;">
+      <div class="sheet-header-bar">
+        <span>04.5 INTERACTIVE CLASSICAL &amp; QUANTUM ENTANGLEMENT ROUTING NOTEBOOK PAGE</span>
+        <span>DIJKSTRA SHORTEST PATH VS. BELL STATE MEASUREMENT (BSM) SWAPPING</span>
+      </div>
+
+      <div class="wide-laboratory-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="academic-tag">LABORATORY TOPIC 05 OF 05 | CLASSICAL &amp; QUANTUM ROUTING</span>
+          <span class="academic-tag burgundy">$|\Phi^+\rangle_{AR_1}|\Phi^+\rangle_{R_2B} \xrightarrow{\text{BSM}} Z_B^{m_1}X_B^{m_2}|\Phi^+\rangle_{AB}$</span>
+        </div>
+        <h1 class="sheet-title">(5) Classical Shortest-Path Routing vs. Bell State Measurements (BSM) in Quantum Entanglement Routing</h1>
+        <p class="sheet-subtitle">
+          White-grid notebook simulation comparing <strong>Classical Dijkstra Store-and-Forward Packet Routing</strong> (Upper Track) against <strong>Quantum Repeater Entanglement Swapping via Joint Bell State Measurements (BSM)</strong>, 2-bit classical feedforward $(m_1, m_2)$, and Bob's Pauli frame correction $Z_B^{m_1}X_B^{m_2}$ (Lower Track).
+        </p>
+
+        <!-- ONE WIDE ANIMATION STAGE -->
+        <div class="wide-canvas-stage notebook-grid-stage">
+          <span class="mode-badge-overlay" id="routingModeBadge">MODE: STATIC (NOTEBOOK SKETCH)</span>
+          <canvas id="routingBsmCanvas" aria-label="Classical Routing and Quantum Bell State Measurement Entanglement Routing Canvas"></canvas>
+        </div>
+
+        <!-- CONTROLS & LIVE TELEMETRY -->
+        <div class="applet-controls-panel">
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">MOTION &amp; HANDWRITING:</strong>
+            <button class="ctrl-pill-btn active" type="button" id="routingStaticBtn">Static Mode (Inspect Phase)</button>
+            <button class="ctrl-pill-btn emerald" type="button" id="routingDynamicBtn">Dynamic Mode (Animate Routing &amp; BSM)</button>
+            <button class="ctrl-pill-btn" type="button" id="routingStepBtn">Step Routing Phase +1</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-replay-sketch="routing">Replay Handwriting Sketch ✎</button>
+          </div>
+          <div class="control-btn-group">
+            <strong style="font-size: 0.84rem; margin-right: 0.35rem;">SELECT BSM OUTCOME $(m_1, m_2)$:</strong>
+            <button class="ctrl-pill-btn active" type="button" data-bsm-outcome="00">BSM: 00 ($|\Phi^+\rangle \to I$)</button>
+            <button class="ctrl-pill-btn" type="button" data-bsm-outcome="10">BSM: 10 ($|\Phi^-\rangle \to Z_B$)</button>
+            <button class="ctrl-pill-btn" type="button" data-bsm-outcome="01">BSM: 01 ($|\Psi^+\rangle \to X_B$)</button>
+            <button class="ctrl-pill-btn burgundy" type="button" data-bsm-outcome="11">BSM: 11 ($|\Psi^-\rangle \to Z_B X_B$)</button>
+            <button class="ctrl-pill-btn" type="button" id="routingToggleHopsBtn">Chain: 1 Repeater (2 Hops)</button>
+          </div>
+        </div>
+
+        <div class="applet-telemetry" id="routingTelemetry"></div>
+
+        <!-- BLOCK-BY-BLOCK DESCRIPTION OF ANIMATION COMPONENTS -->
+        <div id="blockDescriptions-routing"></div>
+
+        <!-- EXPLANATION BELOW WIDE ANIMATION -->
+        <div class="wide-explanation-grid">
+          <div class="explainer-box">
+            <h3>1. Classical Store-and-Forward vs. Quantum BSM</h3>
+            <p style="margin-bottom: 0;">
+              <strong>Classical Routing (Top):</strong> Routers measure, copy, and buffer IP packets hop-by-hop along the minimum additive latency path $D = \sum c_e$.<br />
+              <strong>Quantum BSM Routing (Bottom):</strong> Because unknown quantum states cannot be cloned, repeater $R$ performs a joint Bell State Measurement on $(R_1, R_2)$ to splice entanglement without any photon traveling $A \to B$!
+            </p>
+          </div>
+
+          <div class="explainer-box burgundy">
+            <h3>2. Bell Basis Projectors &amp; Pauli Corrections</h3>
+            <div class="equation-box" style="margin: 0.4rem 0;">
+              $$|\Phi^\pm\rangle = \frac{|00\rangle \pm |11\rangle}{\sqrt{2}}, \quad |\Psi^\pm\rangle = \frac{|01\rangle \pm |10\rangle}{\sqrt{2}}, \quad F_{\text{e2e}} = \frac{1 + 3\prod_e w_e}{4}$$
+            </div>
+            <p style="margin-bottom: 0;">
+              Outcome $(m_1, m_2) \in \{00, 10, 01, 11\}$ requires classical feedforward to Bob, who applies $Z_B^{m_1} X_B^{m_2}$ to recover $|\Phi^+\rangle_{AB}$.
+            </p>
+          </div>
+
+          <div class="explainer-box emerald">
+            <h3>3. Unique Facts About Entanglement Routing</h3>
+            <p style="margin-bottom: 0;">
+              • <strong>Log-Cost Isomorphism:</strong> Defining $c_e = -\ln w_e$ converts multiplicative Werner purity $\prod w_e$ into an additive Dijkstra shortest-path metric!<br />
+              • <strong>50% Linear-Optics Limit:</strong> Standard beam-splitter BSM distinguishes only 2 of the 4 Bell states ($p_{\text{swap}} \le 50\%$) unless assisted by ancillary photons or cavity QED.
+            </p>
+          </div>
+        </div>
+
+        <div id="tutorialContainer-routing"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><strong>M. IMANSYAH BASUDEWA, S.T., M.T.</strong> | Computer Engineering Graduate Researcher, Memorial University</div>
+      <div>BOOKNOTE WHITE EDITION | BATANG &amp; IEEE TYPOGRAPHY</div>
+    </div>
+  </footer>
+
+  <aside class="schrodinger-widget" id="schrodingerWidgetContainer"></aside>
+
+  <script src="data.js"></script>
+  <script src="learn-subtopics.js"></script>
+  <script src="tikz-figures.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

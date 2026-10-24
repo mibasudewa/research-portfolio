@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn: Classical &amp; Quantum Theory | M. Imansyah Basudewa, S.T., M.T.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="learn">
+
+  <header class="site-header" id="sharedSiteHeader"></header>
+
+  <main class="page-wrapper">
+
+    <!-- Top Sub-Page View Switcher on Learn Page -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+      <div class="control-btn-group">
+        <button class="ctrl-pill-btn active" type="button" id="viewTheoryCurriculumBtn">
+          [View 1] 5 Foundational Theory Modules (a to i)
+        </button>
+        <button class="ctrl-pill-btn burgundy" type="button" id="viewNotebookArchiveBtn">
+          [View 2] Research Notes Archive
+        </button>
+        <button class="ctrl-pill-btn emerald" type="button" id="viewPostStudioBtn">
+          [View 3] + Write &amp; Publish New Post to Learn
+        </button>
+      </div>
+      <span class="academic-tag">USE THE 03. LEARN HEADER DROPDOWN TO JUMP TO ANY MODULE</span>
+    </div>
+
+    <!-- ======================================================================
+         VIEW 1: FIVE FOUNDATIONAL CLASSICAL & QUANTUM THEORY MODULES (a to i)
+         ====================================================================== -->
+    <section class="booknote-sheet" id="curriculumSection" aria-labelledby="learnPageHeading">
+      <div class="sheet-header-bar">
+        <span>03. LEARN | PEDAGOGICAL CURRICULUM &amp; COMPARATIVE MONOGRAPHS</span>
+        <span>SECTIONS (a) TIMELINE · (b) QUESTIONS · (c) PIONEERS · (d) APPS · (e) FUN FACTS · (f) REFS · (g) SVG EXAMPLE · (h) HIGH SCHOOL · (i) 15 Q&amp;As</span>
+      </div>
+
+      <div class="sheet-title-banner">
+        <div>
+          <h1 class="sheet-title" id="learnPageHeading">Foundational Theory: Classical &amp; Quantum Systems</h1>
+          <p class="sheet-subtitle">
+            Each module presents Part A (Classical Formulation) and Part B (Quantum Formulation), followed by (a) Timeline, (b) Core Ideas &amp; Research Questions, (c) Important Pioneers, (d) Applications, (e) Origin &amp; Fun Facts, (f) IEEE References, (g) Worked Example with SVG Illustration, (h) High School Analogy, and (i) 15 Concept Questions &amp; Answers.
+          </p>
+        </div>
+        <a href="illustrations.html" class="btn-booknote primary">04. Open Interactive Illustrations</a>
+      </div>
+
+      <!-- 5 Curriculum Module Tabs -->
+      <div class="curriculum-nav-tabs" id="curriculumTabsBar" role="tablist"></div>
+
+      <!-- Active Module Content Container -->
+      <div id="curriculumModuleViewer"></div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 2: RESEARCH NOTEBOOK & LATEX ARTICLES ARCHIVE
+         ====================================================================== -->
+    <section class="booknote-sheet" id="notebookSection" style="display: none;" aria-labelledby="notebookHeading">
+      <div class="sheet-header-bar">
+        <span>RESEARCH NOTEBOOK ARCHIVE</span>
+        <span>EXTENDED MATHEMATICAL NOTES &amp; CUSTOM PUBLISHED POSTS</span>
+      </div>
+
+      <div class="sheet-title-banner">
+        <div>
+          <h2 class="sheet-title" id="notebookHeading">Extended Research Notes &amp; Derivations</h2>
+          <p class="sheet-subtitle">
+            Detailed mathematical notes on 2D Surface Code Stabilizer Extraction, Anonymous Quantum Network Routing, and any custom posts you publish via the Author Studio.
+          </p>
+        </div>
+        <div class="control-btn-group" id="notebookSelectorButtons"></div>
+      </div>
+
+      <article style="padding: 2.25rem;" id="blogArticleReader"></article>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: AUTHOR POST STUDIO (HOW TO ADD NEW WRITING POSTS TO LEARN)
+         ====================================================================== -->
+    <section class="booknote-sheet" id="postStudioSection" style="display: none;" aria-labelledby="studioHeading">
+      <div class="sheet-header-bar">
+        <span>AUTHOR PUBLISHING STUDIO | ADD NEW BASIC THEORY OR RESEARCH POST</span>
+        <span>SUPPORTS FULL LATEX ($...$ AND $$...$$)</span>
+      </div>
+
+      <div class="sheet-title-banner">
+        <div>
+          <h2 class="sheet-title" id="studioHeading">How to Add a Writing Post to Learn (Interactive Studio &amp; Code Generator)</h2>
+          <p class="sheet-subtitle">
+            Write your new Basic Theory or Research article below. Clicking <strong>[Publish Post Immediately to Browser]</strong> saves it to this browser and opens it in the Research Notes Archive right away. Clicking <strong>[Generate data.js Code Snippet]</strong> produces the exact JavaScript object to paste into <code>data.js</code> for permanent GitHub Pages deployment.
+          </p>
+        </div>
+      </div>
+
+      <form class="author-studio-form" id="authorPostForm" onsubmit="return false;">
+        <div>
+          <label class="studio-label" for="postTitleInput">1. Post / Theory Title</label>
+          <input
+            type="text"
+            id="postTitleInput"
+            class="studio-input"
+            placeholder="e.g., Homological Decoding of Triangle Hamming & Surface Codes"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="studio-label" for="postCategoryInput">2. Research Category / Topic</label>
+          <select id="postCategoryInput" class="studio-select">
+            <option value="Quantum Error Correction">01. Error Correction Codes (ECC &amp; QEC)</option>
+            <option value="Quantum Cryptography">02. Classical &amp; Quantum Cryptography</option>
+            <option value="Quantum Networks">03. Classical &amp; Quantum Networks</option>
+            <option value="Quantum Routing">04. Classical &amp; Quantum Routing</option>
+            <option value="Information Theory">05. Classical &amp; Quantum Information Theory</option>
+          </select>
+        </div>
+
+        <div class="form-field-full">
+          <label class="studio-label" for="postSubtitleInput">3. Subtitle / Brief Abstract</label>
+          <input
+            type="text"
+            id="postSubtitleInput"
+            class="studio-input"
+            placeholder="e.g., Deriving syndrome parity checks and minimum weight perfect matching bounds."
+          />
+        </div>
+
+        <div class="form-field-full">
+          <label class="studio-label" for="postContentInput">
+            4. Body Content (HTML or Paragraphs + LaTeX Equations using $inline$ and $$display$$)
+          </label>
+          <textarea
+            id="postContentInput"
+            class="studio-textarea"
+            placeholder="<p>Let $\mathcal{S} = \langle g_1, \dots, g_{n-k} \rangle$ be an Abelian stabilizer group.</p>&#10;<div class='equation-box'>$$S_i |\psi\rangle = +1|\psi\rangle$$</div>"
+          ></textarea>
+        </div>
+
+        <div class="form-field-full" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn-booknote primary" type="button" id="publishPostNowBtn">
+            Publish Post Immediately to Learn Archive
+          </button>
+          <button class="btn-booknote burgundy" type="button" id="generateDataJsCodeBtn">
+            Generate data.js Code Snippet for GitHub Pages
+          </button>
+        </div>
+      </form>
+
+      <div style="padding: 1.75rem 2.25rem;" id="studioCodeOutputBox">
+        <div class="theorem-callout">
+          <div class="theorem-title">Step by Step Guide: How to Permanently Add Posts to data.js</div>
+          <p style="margin-bottom: 0.5rem;">
+            <strong>Method A (Instant Browser Publish):</strong> Fill in the 4 fields above and click <em>Publish Post Immediately to Learn Archive</em>. Your post is stored in your browser and appears immediately under <strong>[View 2] Research Notes Archive</strong>.
+          </p>
+          <p style="margin-bottom: 0;">
+            <strong>Method B (Permanent GitHub Pages File Update):</strong> Open <code>data.js</code> in any text editor, scroll to <code>const thinkingPosts = [ ... ]</code> (around line 630), and paste the generated code block at the top of the array. Every equation inside <code>$...$</code> or <code>$$...$$</code> is automatically typeset by KaTeX!
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><strong>M. IMANSYAH BASUDEWA, S.T., M.T.</strong> | Computer Engineering Graduate Researcher, Memorial University</div>
+      <div>BOOKNOTE WHITE EDITION | BATANG &amp; IEEE TYPOGRAPHY</div>
+    </div>
+  </footer>
+
+  <aside class="schrodinger-widget" id="schrodingerWidgetContainer"></aside>
+
+  <script src="data.js"></script>
+  <script src="learn-subtopics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Profile &amp; CV | M. Imansyah Basudewa, S.T., M.T.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="profile">
+
+  <header class="site-header" id="sharedSiteHeader"></header>
+
+  <main class="page-wrapper">
+
+    <section class="booknote-sheet" aria-labelledby="profilePageHeading">
+      <div class="sheet-header-bar">
+        <span>05. PROFILE | ACADEMIC BIOGRAPHY &amp; CURRICULUM VITAE</span>
+        <span>MEMORIAL UNIVERSITY | COMPUTER ENGINEERING</span>
+      </div>
+
+      <div class="sheet-title-banner">
+        <div>
+          <h1 class="sheet-title" id="profilePageHeading">M. Imansyah Basudewa, S.T., M.T.</h1>
+          <p class="sheet-subtitle">
+            Computer Engineering Graduate Researcher at Memorial University of Newfoundland | Specialist in Quantum Information Science, Error Correction Codes, Cryptography, and Telecommunications Engineering.
+          </p>
+        </div>
+        <div class="btn-row" style="margin-top: 0;">
+          <button class="btn-booknote primary" type="button" id="downloadCvBtn">Print / Export Academic CV (PDF)</button>
+          <a href="mailto:imansyah.basudewa@mun.ca" class="btn-booknote">Email Researcher</a>
+        </div>
+      </div>
+
+      <div class="comparative-grid">
+        <!-- Left Column: Biography & Core Research Competencies -->
+        <div class="comparative-col">
+          <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">Academic Biography</h2>
+          <div id="profileBiographyContainer"></div>
+
+          <h3 style="font-size: 1.2rem; margin: 1.75rem 0 0.85rem;">Technical &amp; Mathematical Competencies</h3>
+          <div class="theorem-callout">
+            <div class="theorem-title">Quantum Computing &amp; Coding Theory</div>
+            <p style="margin-bottom: 0;">
+              2D Surface Codes, Steane $[[7,1,3]]$ &amp; Triangle Hamming Codes, Stabilizer Formalism, Minimum Weight Perfect Matching (MWPM), BB84/E91 QKD, Qiskit, Python, MATLAB, C++.
+            </p>
+          </div>
+          <div class="theorem-callout burgundy">
+            <div class="theorem-title">Optical &amp; Wireless Telecommunications</div>
+            <p style="margin-bottom: 0;">
+              Massive MIMO Beamforming, OFDM/OTFS Signal Processing, Coherent DWDM Optical Links, Link Budget Engineering, and Telecommunications Project Management (4+ Years).
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Education & Experience Timelines -->
+        <div class="comparative-col">
+          <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">Education &amp; Academic Degrees</h2>
+          <div id="educationTimelineList" style="margin-bottom: 2rem;"></div>
+
+          <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">Research &amp; Engineering Experience (4+ Years)</h2>
+          <div id="experienceTimelineList"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><strong>M. IMANSYAH BASUDEWA, S.T., M.T.</strong> | Computer Engineering Graduate Researcher, Memorial University</div>
+      <div>BOOKNOTE WHITE EDITION | BATANG &amp; IEEE TYPOGRAPHY</div>
+    </div>
+  </footer>
+
+  <aside class="schrodinger-widget" id="schrodingerWidgetContainer"></aside>
+
+  <script src="data.js"></script>
+  <script src="learn-subtopics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Imansyah Basudewa, S.T., M.T. | Academic Research Portfolio</title>
+  <meta name="description" content="Academic Research Portfolio of M. Imansyah Basudewa, S.T., M.T., Computer Engineering Graduate Researcher at Memorial University." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=JetBrains+Mono:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+
+  <!-- Shared Multi-Page Header with Dropdowns injected/enhanced by app.js -->
+  <header class="site-header" id="sharedSiteHeader"></header>
+
+  <main class="page-wrapper">
+
+    <!-- ======================================================================
+         MAIN PAGE HERO: ONLY PHOTO & ACADEMIC PROFILE (SEPARATE FROM PILLARS)
+         ====================================================================== -->
+    <section class="booknote-sheet" aria-labelledby="mainHeroTitle">
+      <div class="sheet-header-bar">
+        <span>01. MAIN ACADEMIC MONOGRAPH &amp; RESEARCH OVERVIEW</span>
+        <span>MEMORIAL UNIVERSITY OF NEWFOUNDLAND, CANADA</span>
+      </div>
+
+      <div class="main-profile-hero">
+        <!-- Left Column: Academic Portrait Photo & Identity -->
+        <div class="portrait-column">
+          <div class="portrait-frame" id="portraitFrame">
+            <img
+              id="researcherPhotoImg"
+              class="portrait-photo"
+              src=""
+              alt="Portrait of M. Imansyah Basudewa, S.T., M.T."
+              style="display: none;"
+            />
+            <svg id="portraitPlaceholderSvg" class="portrait-placeholder-svg" viewBox="0 0 220 265" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Academic Portrait Silhouette">
+              <rect width="220" height="265" fill="#F3F1EC" />
+              <circle cx="110" cy="95" r="42" fill="#CBD5E1" stroke="#1E293B" stroke-width="2" />
+              <path d="M 38 250 C 38 182 182 182 182 250 Z" fill="#CBD5E1" stroke="#1E293B" stroke-width="2" />
+              <rect x="16" y="16" width="188" height="233" fill="none" stroke="#94A3B8" stroke-width="1" />
+              <text x="110" y="232" text-anchor="middle" fill="#1E293B" font-family="Batang, Georgia, serif" font-size="11" font-weight="bold">
+                M. IMANSYAH BASUDEWA
+              </text>
+              <text x="110" y="246" text-anchor="middle" fill="#52525B" font-family="Times New Roman, serif" font-size="9.5">
+                S.T., M.T. | MUN RESEARCHER
+              </text>
+            </svg>
+          </div>
+
+          <div class="portrait-caption">M. Imansyah Basudewa, S.T., M.T.</div>
+          <div class="portrait-subcaption">
+            Computer Engineering Graduate Researcher<br />
+            Memorial University, Canada
+          </div>
+
+          <label class="portrait-upload-label">
+            Select Portrait Photo
+            <input type="file" id="photoUploadInput" accept="image/*" style="display: none;" />
+          </label>
+
+          <div style="font-size: 0.82rem; display: flex; gap: 0.65rem; flex-wrap: wrap; justify-content: center;">
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">[Google Scholar]</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+            <a href="https://orcid.org" target="_blank" rel="noopener noreferrer">[ORCID]</a>
+          </div>
+        </div>
+
+        <!-- Right Column: IEEE Style Academic Profile & Multi-Page Directory -->
+        <div class="main-bio-column">
+          <div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="academic-tag">FACULTY OF ENGINEERING &amp; APPLIED SCIENCE</span>
+              <span class="academic-tag burgundy">$\mathcal{H} = (\mathbb{C}^2)^{\otimes n}$</span>
+            </div>
+
+            <h1 class="ieee-paper-title" id="mainHeroTitle">
+              Quantum Information Science, Error Correction Topologies, and Next Generation Communication Systems
+            </h1>
+
+            <div class="ieee-abstract-box">
+              <strong>Abstract:</strong> M. Imansyah Basudewa, S.T., M.T. is a Computer Engineering Graduate Researcher at Memorial University of Newfoundland. Combining rigorous mathematical theory with over four years of telecommunications R&amp;D and engineering project management experience, his research investigates the algebraic and topological structures linking classical channel coding (Hamming Distance Cubes, Triangle Hamming Codes, Massive MIMO, and Coherent Optical Fiber) with fault tolerant quantum computing (2D Surface Codes, 7 Qubit Steane Codes, Unitary Group Topologies, and Quantum Cryptography).
+            </div>
+
+            <div class="equation-box">
+              $$\mathcal{C}_{\mathcal{S}} = \left\{ |\psi\rangle \in \mathcal{H} \;:\; S_i |\psi\rangle = +1|\psi\rangle \right\}, \qquad S(\rho) = -\text{Tr}(\rho \log_2 \rho)$$
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <a href="research-pillars.html" class="btn-booknote primary">01.B Open 7 Core Research Pillars &amp; Structural Map Page</a>
+            <a href="publications.html" class="btn-booknote">02. Publications Index</a>
+            <a href="learn.html" class="btn-booknote">03. Learn Theory &amp; Post Studio</a>
+            <a href="illustrations.html" class="btn-booknote burgundy">04. Interactive Laboratory Illustrations</a>
+            <a href="profile.html" class="btn-booknote">05. Full Academic Profile &amp; CV</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metadata Strip -->
+      <div class="metadata-strip">
+        <div class="meta-box">
+          <span class="meta-box-label">AFFILIATION</span>
+          <span class="meta-box-value">Memorial University (MUN)</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-box-label">DEGREES</span>
+          <span class="meta-box-value">S.T. (B.Eng.) &amp; M.T. (M.Eng.)</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-box-label">CORE SPECIALIZATION</span>
+          <span class="meta-box-value">QEC, Cryptography &amp; PHY Comm</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-box-label">EXPERIENCE</span>
+          <span class="meta-box-value">4+ Years R&amp;D &amp; Telecom PM</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><strong>M. IMANSYAH BASUDEWA, S.T., M.T.</strong> | Computer Engineering Graduate Researcher, Memorial University</div>
+      <div>BOOKNOTE WHITE EDITION | BATANG &amp; IEEE TYPOGRAPHY</div>
+    </div>
+  </footer>
+
+  <aside class="schrodinger-widget" id="schrodingerWidgetContainer"></aside>
+
+  <script src="data.js"></script>
+  <script src="learn-subtopics.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
